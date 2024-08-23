@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import CryptoJS from 'crypto-js';
 import { Form, Button, Alert, Container } from 'react-bootstrap';
 import { login } from './api';
 import { useAuth } from './AuthContext';
@@ -29,10 +28,6 @@ function Login() {
     return Object.keys(errors).length === 0;
   };
 
-  const encryptPassword = (password) => {
-    return CryptoJS.AES.encrypt(password, 'secret key').toString();
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -40,7 +35,6 @@ function Login() {
       return;
     }
 
-    const encryptedPassword = encryptPassword(password);
 
     const formData = {
       username: username,

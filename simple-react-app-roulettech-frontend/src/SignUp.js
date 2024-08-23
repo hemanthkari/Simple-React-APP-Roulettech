@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import CryptoJS from 'crypto-js';
 import { Form, Button, Alert, Container } from 'react-bootstrap';
 import { signup } from './api';
 
@@ -43,9 +42,6 @@ function Signup() {
     return Object.keys(errors).length === 0;
   };
 
-  const encryptPassword = (password) => {
-    return CryptoJS.AES.encrypt(password, 'secret key').toString();
-  };
 
   const handleChange = (e) => {
     setFormData({
@@ -60,8 +56,6 @@ function Signup() {
     if (!validate()) {
       return;
     }
-
-    const encryptedPassword = encryptPassword(formData.password);
 
     const submissionData = {
       username: formData.username,
