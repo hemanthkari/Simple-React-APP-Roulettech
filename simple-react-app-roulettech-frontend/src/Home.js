@@ -8,12 +8,12 @@ function Home() {
         <Row className='align-items-center'>
             <Col>
             
-        <h1>Welcome to Simple React Website</h1>
+        <h1>Welcome to Simple React Webapp</h1>
         <p>
-          This is a simple homepage created using React and React-Bootstrap.
+          This is a simple homepage with login and signup components created using React, React-Bootstrap for Front-End, and Django with python for backend.
         </p>
         <p>
-          <Button variant="primary" href="/about">Learn more about us</Button>
+          <Button variant="primary" href="/signup">Signup</Button>
         </p>
         </Col>
         </Row>
